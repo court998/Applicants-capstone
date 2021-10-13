@@ -29,6 +29,7 @@ public class Applicant {
     private String regDate;
     private String addComments;
 
+
     public Applicant() {
     }
 
