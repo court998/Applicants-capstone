@@ -1,9 +1,6 @@
 package com.example.applicants.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Applicant {
@@ -13,6 +10,7 @@ public class Applicant {
     private Long id;
 
     private String prefix;
+    @Column
     private String firstName;
     private String lastName;
     private String phoneNumber;
