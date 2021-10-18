@@ -11,45 +11,46 @@ public class Applicant {
 
     private String prefix;
     @Column
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String addressLineOne;
-    private String addressLineTwo;
+    private String firstname;
+    private String lastname;
+    private String phone;
+    private String addressLine1;
+    private String addressLine2;
     private String city;
-    private String zipCode;
+    private String postcode;
     private String vehicleType;
     private String engineSize;
     private String additionalDrivers;
-    private String commercialPurpose;
-    private String usedOutsideOfState;
+    private String commercialPurposes;
+    private String usedOutsideState;
     private String currentValue;
-    private String regDate;
-    private String addComments;
+    private String dateRegistered;
+    private String comments;
 
 
     public Applicant() {
     }
 
-    public Applicant(Long id, String prefix, String firstName, String lastName, String phoneNumber, String addressLineOne, String addressLineTwo, String city, String zipCode, String vehicleType, String engineSize, String additionalDrivers, String commercialPurpose, String usedOutsideOfState, String currentValue, String regDate, String addComments) {
+    public Applicant(Long id, String prefix, String firstname, String lastname, String phone, String addressLine1, String addressLine2, String city, String postcode, String vehicleType, String engineSize, String additionalDrivers, String commercialPurposes, String usedOutsideState, String currentValue, String dateRegistered, String comments) {
         this.id = id;
         this.prefix = prefix;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-        this.addressLineOne = addressLineOne;
-        this.addressLineTwo = addressLineTwo;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.phone = phone;
+        this.addressLine1 = addressLine1;
+        this.addressLine2 = addressLine2;
         this.city = city;
-        this.zipCode = zipCode;
+        this.postcode = postcode;
         this.vehicleType = vehicleType;
         this.engineSize = engineSize;
         this.additionalDrivers = additionalDrivers;
-        this.commercialPurpose = commercialPurpose;
-        this.usedOutsideOfState = usedOutsideOfState;
+        this.commercialPurposes = commercialPurposes;
+        this.usedOutsideState = usedOutsideState;
         this.currentValue = currentValue;
-        this.regDate = regDate;
-        this.addComments = addComments;
+        this.dateRegistered = dateRegistered;
+        this.comments = comments;
     }
+
 
     public Long getId() {
         return id;
@@ -67,44 +68,44 @@ public class Applicant {
         this.prefix = prefix;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getLastname() {
+        return lastname;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
-    public String getAddressLineOne() {
-        return addressLineOne;
+    public String getAddressLine1() {
+        return addressLine1;
     }
 
-    public void setAddressLineOne(String addressLineOne) {
-        this.addressLineOne = addressLineOne;
+    public void setAddressLine1(String addressLine1) {
+        this.addressLine1 = addressLine1;
     }
 
-    public String getAddressLineTwo() {
-        return addressLineTwo;
+    public String getAddressLine2() {
+        return addressLine2;
     }
 
-    public void setAddressLineTwo(String addressLineTwo) {
-        this.addressLineTwo = addressLineTwo;
+    public void setAddressLine2(String addressLine2) {
+        this.addressLine2 = addressLine2;
     }
 
     public String getCity() {
@@ -115,12 +116,12 @@ public class Applicant {
         this.city = city;
     }
 
-    public String getZipCode() {
-        return zipCode;
+    public String getPostcode() {
+        return postcode;
     }
 
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
+    public void setPostcode(String postcode) {
+        this.postcode = postcode;
     }
 
     public String getVehicleType() {
@@ -147,20 +148,20 @@ public class Applicant {
         this.additionalDrivers = additionalDrivers;
     }
 
-    public String getCommercialPurpose() {
-        return commercialPurpose;
+    public String getCommercialPurposes() {
+        return commercialPurposes;
     }
 
-    public void setCommercialPurpose(String commercialPurpose) {
-        this.commercialPurpose = commercialPurpose;
+    public void setCommercialPurposes(String commercialPurposes) {
+        this.commercialPurposes = commercialPurposes;
     }
 
-    public String getUsedOutsideOfState() {
-        return usedOutsideOfState;
+    public String getUsedOutsideState() {
+        return usedOutsideState;
     }
 
-    public void setUsedOutsideOfState(String usedOutsideOfState) {
-        this.usedOutsideOfState = usedOutsideOfState;
+    public void setUsedOutsideState(String usedOutsideState) {
+        this.usedOutsideState = usedOutsideState;
     }
 
     public String getCurrentValue() {
@@ -171,19 +172,19 @@ public class Applicant {
         this.currentValue = currentValue;
     }
 
-    public String getRegDate() {
-        return regDate;
+    public String getDateRegistered() {
+        return dateRegistered;
     }
 
-    public void setRegDate(String regDate) {
-        this.regDate = regDate;
+    public void setDateRegistered(String dateRegistered) {
+        this.dateRegistered = dateRegistered;
     }
 
-    public String getAddComments() {
-        return addComments;
+    public String getComments() {
+        return comments;
     }
 
-    public void setAddComments(String addComments) {
-        this.addComments = addComments;
+    public void setComments(String comments) {
+        this.comments = comments;
     }
 }
