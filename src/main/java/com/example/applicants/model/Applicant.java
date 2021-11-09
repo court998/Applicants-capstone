@@ -11,46 +11,45 @@ public class Applicant {
 
     private String prefix;
     @Column
-    private String firstname;
-    private String lastname;
-    private String phone;
+    private String firstName;
+    private String lastName;
+    private String telephoneNumber;
     private String addressLine1;
     private String addressLine2;
     private String city;
-    private String postcode;
+    private String zipcode;
     private String vehicleType;
     private String engineSize;
     private String additionalDrivers;
     private String commercialPurposes;
-    private String usedOutsideState;
+    private String registeredState;
+    private String vehicleRegistered;
     private String currentValue;
-    private String dateRegistered;
-    private String comments;
+    private double quoteAmount;
 
-
-    public Applicant() {
-    }
-
-    public Applicant(Long id, String prefix, String firstname, String lastname, String phone, String addressLine1, String addressLine2, String city, String postcode, String vehicleType, String engineSize, String additionalDrivers, String commercialPurposes, String usedOutsideState, String currentValue, String dateRegistered, String comments) {
+    public Applicant(Long id, String prefix, String firstName, String lastName, String telephoneNumber, String addressLine1, String addressLine2, String city, String zipcode, String vehicleType, String engineSize, String additionalDrivers, String commercialPurposes, String registeredState, String vehicleRegistered, String currentValue, double quoteAmount) {
         this.id = id;
         this.prefix = prefix;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.phone = phone;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.telephoneNumber = telephoneNumber;
         this.addressLine1 = addressLine1;
         this.addressLine2 = addressLine2;
         this.city = city;
-        this.postcode = postcode;
+        this.zipcode = zipcode;
         this.vehicleType = vehicleType;
         this.engineSize = engineSize;
         this.additionalDrivers = additionalDrivers;
         this.commercialPurposes = commercialPurposes;
-        this.usedOutsideState = usedOutsideState;
+        this.registeredState = registeredState;
+        this.vehicleRegistered = vehicleRegistered;
         this.currentValue = currentValue;
-        this.dateRegistered = dateRegistered;
-        this.comments = comments;
+        this.quoteAmount = quoteAmount;
     }
 
+
+    public Applicant() {
+    }
 
     public Long getId() {
         return id;
@@ -68,28 +67,28 @@ public class Applicant {
         this.prefix = prefix;
     }
 
-    public String getFirstname() {
-        return firstname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public String getLastname() {
-        return lastname;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getTelephoneNumber() {
+        return telephoneNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setTelephoneNumber(String telephoneNumber) {
+        this.telephoneNumber = telephoneNumber;
     }
 
     public String getAddressLine1() {
@@ -116,12 +115,12 @@ public class Applicant {
         this.city = city;
     }
 
-    public String getPostcode() {
-        return postcode;
+    public String getZipcode() {
+        return zipcode;
     }
 
-    public void setPostcode(String postcode) {
-        this.postcode = postcode;
+    public void setZipCode(String zipCode) {
+        this.zipcode = zipcode;
     }
 
     public String getVehicleType() {
@@ -156,35 +155,37 @@ public class Applicant {
         this.commercialPurposes = commercialPurposes;
     }
 
-    public String getUsedOutsideState() {
-        return usedOutsideState;
+    public String getRegisteredState() {
+        return registeredState;
     }
 
-    public void setUsedOutsideState(String usedOutsideState) {
-        this.usedOutsideState = usedOutsideState;
+    public void setRegisteredState(String registeredState) {
+        this.registeredState = registeredState;
+    }
+
+    public String getVehicleRegistered() {
+        return vehicleRegistered;
+    }
+
+    public void setVehicleRegistered(String vehicleRegistered) {
+        this.vehicleRegistered = vehicleRegistered;
     }
 
     public String getCurrentValue() {
         return currentValue;
     }
 
+    public double getQuoteAmount() {
+        return quoteAmount;
+    }
+
+    public void setQuoteAmount(double quoteAmount) {
+        this.quoteAmount = quoteAmount;
+    }
+
     public void setCurrentValue(String currentValue) {
         this.currentValue = currentValue;
-    }
 
-    public String getDateRegistered() {
-        return dateRegistered;
-    }
 
-    public void setDateRegistered(String dateRegistered) {
-        this.dateRegistered = dateRegistered;
-    }
-
-    public String getComments() {
-        return comments;
-    }
-
-    public void setComments(String comments) {
-        this.comments = comments;
     }
 }
