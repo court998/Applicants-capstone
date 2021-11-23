@@ -3,12 +3,14 @@ import './Read.css';
 import { Button, Table } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import SERVER_URL from '../../utils/constants';
 
 function Read() {
   const [tableData, setTableData] = useState([]);
 
   const callMockApiWithAxiosGET = () => {
-    const endpointURL = "http://localhost:8080/applicants";
+    // const endpointURL = "http://localhost:8080/applicants";
+    const endpointURL = `${SERVER_URL}/applicants`;
     axios.get(endpointURL)
       .then(response => setTableData(response.data));
   };
