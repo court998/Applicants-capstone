@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, Button, Radio } from 'semantic-ui-react';
 import axios from 'axios';
 import './Create.css';
 import { useHistory } from 'react-router';
+import {Link} from "react-router-dom";
+import SERVER_URL from "../../utils/constants";
+
 
 
 function Create() {
@@ -22,97 +25,97 @@ function Create() {
   const [currentValue, setCurrentValue] = useState('');
   const [vehicleRegistered, setVehicleRegistered] = useState(null);
 
-  function validate() {
-    var valid = true;
-    var errorMessage = "";
+  function formValidation() {
+    var validInput = true;
+    var error = "";
     var regexNum = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
     var zipcodeRegex = /^[0-9]{5}(?:-[0-9]{4})?$/;
 
     if (!prefix.trim()) {
-      valid = (false);
-      errorMessage = "Prefix is a required field.\n";
+      validInput= false;
+      error = "Prefix required to proceed.\n";
     }
 
     if (!firstName.trim()) {
-      valid = (false);
-      errorMessage += "First Name is Required.\n";
+      validInput = false;
+      error += "First Name required to proceed.\n";
     }
 
     if (!lastName.trim()) {
-      valid = (false);
-      errorMessage += "Last Name is Required.\n";
+      validInput = false;
+      error += "Last Name required to proceed.\n";
     }
     
     if (!telephoneNumber.match(regexNum) || telephoneNumber.length > 11) {
-      valid = (false);
-      errorMessage += "Phone Number is Required and Must Be Valid.\n";
+      validInput = false;
+      error += "Telephone Number required to proceed.\n";
     }
 
     if (!addressLine1.trim()) {
-      valid = (false);
-      errorMessage += "Address Line One is Required.\n";
+      validInput = false;
+      error += "Address Line One required to proceed.\n";
     }
 
     if (!addressLine2.trim()) {
-      valid = (false);
-      errorMessage += "Address Line Two is Required.\n";
+      validInput = false;
+      error += "Address Line required to proceed.\n";
     }
 
     if (!city.trim()) {
-      valid = (false);
-      errorMessage += "City is Required.\n";
+      validInput = false;
+      error += "City is required to proceed.\n";
     }
 
     if(!zipcode.match(zipcodeRegex)){
-      valid = (false);
-      errorMessage += "Zip Code is Required and must be presented in the format: 12345-6789\n";
+      validInput = false;
+      error += "Zip Code required to proceed and must be presented in the format: 12345-6789\n";
     }
 
     if (!vehicleType.trim()) {
-      valid = (false);
-      errorMessage += "Vehicle Type is Required.\n";
+      validInput = false;
+      error += "Vehicle Type is required to proceed.\n";
     }
 
     if (!engineSize.trim()) {
-      valid = (false);
-      errorMessage += "Engine Size is Required.\n";
+      validInput = false;
+      error += "Engine Size is required to proceed.\n";
     }
 
     if (!additionalDrivers.trim()) {
-      valid = (false);
-      errorMessage += "Additional Drivers is Required.\n";
+      validInput = false;
+      error += "Additional Drivers selection required to proceed.\n";
     }
 
     if (!commercialPurposes.trim()) {
-      valid = (false);
-      errorMessage += "Commercial Purpose is Required.\n";
+      validInput = false;
+      error += "Commercial Purpose selection required to proceed.\n";
     }
 
     if (!registeredState.trim()) {
-      valid = (false);
-      errorMessage += "Used Outside of State is Required.\n";
+      validInput = false;
+      error += "Used Outside of State selection is required to proceed.\n";
     }
 
     if (Date.parse(vehicleRegistered) >= Date.now() || !vehicleRegistered) {
-      valid = (false);
-      errorMessage += "Date is Required and Cannot be in the Future.\n";
+      validInput = false;
+      error += "Date is required to proceed and must be not be a future date.\n";
     }//Date.parse(regDate)
 
     if(!currentValue.trim()){
-      valid = (false);
-      errorMessage += "Current Value is Required.";
+      validInput = false;
+      error += "Current Value required to proceed.";
     } else if(parseInt(currentValue) < 0 || parseInt(currentValue) > 50000){
-      valid = (false);
-      errorMessage += "Current Value must be between $0 and $50,000.\n";
+      validInput = false;
+      error += "Current Value must be between $0 and $50,000.\n";
     }
 
-    if (valid) {
+    if (validInput) {
       callMockAPI();
       window.location.href = "/read";
-      alert("Record Added");
+      alert("Form submission successful");
     } else {
-      alert("Record Not Added - Please Examine the Following Fields:\n\n" + errorMessage);
-      console.log(errorMessage);
+      alert("The following records have not been added:\n\n" + error);
+      console.log(error);
       return false;
     }
 
@@ -140,7 +143,8 @@ function Create() {
       currentValue,
       vehicleRegistered
     }
-    const endpointURL = "http://localhost:8080/applicants";
+    // const endpointURL = "http://localhost:8080/applicants";
+    const endpointURL = SERVER_URL + "/applicants";
     axios.post(endpointURL, formData)
       .then(() => history.push("/read"))
       .catch(err => console.log(err));
@@ -261,12 +265,12 @@ function Create() {
         <Form.Field> <label>Current Value of car in U.S Dollars</label> <input placeholder='Market Value' onChange={e => setCurrentValue(e.target.value)} /> </Form.Field>
 
         <center>
-          <Form.Button primary
+          <Button primary
             //type='submit'
             color='blue'
             fluid size='large'
-            onClick={validate}
-          >Submit</Form.Button>
+            onClick={formValidation}
+          >Submit</Button>
         </center>
      
       </Form>
