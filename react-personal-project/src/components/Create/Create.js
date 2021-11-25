@@ -3,7 +3,6 @@ import { Form, Button, Radio } from 'semantic-ui-react';
 import axios from 'axios';
 import './Create.css';
 import { useHistory } from 'react-router';
-import {Link} from "react-router-dom";
 import SERVER_URL from "../../utils/constants";
 
 
@@ -17,7 +16,7 @@ function Create() {
   const [addressLine2, setAddressLine2] = useState('');
   const [city, setCity] = useState('');
   const [zipcode, setZipcode] = useState('');
-  const [vehicleType, setvehicleType] = useState('');
+  const [vehicleType, setVehicleType] = useState('');
   const [engineSize, setEngineSize] = useState('');
   const [additionalDrivers, setAdditionalDrivers] = useState('');
   const [commercialPurposes, setCommercialPurposes] = useState('');
@@ -188,17 +187,17 @@ function Create() {
     <div>
       <Form size={"medium"}>
      
-    <center>
+
       <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="200" width="600px" fluid />
         <h1>Vehicle Insurance Application</h1>
         <h3>Please fill out the information below accurately</h3>
         <br></br>
-      </center>
+
         <Form.Group>
           <Form.Select width={2} fluid label='Prefix' options={prefixOptions} placeholder='Prefix' onChange={e => setPrefix(e.target.textContent)} />
           <Form.Input width={6} fluid label='First Name' placeholder='First Name' maxLength='20' onChange={e => setFirstName(e.target.value)} />
           <Form.Input width={6} fluid label='Last Name' placeholder='Last Name' maxLength='20' onChange={e => setLastName(e.target.value)} />
-          <Form.Input width={4} fluid label='Phone Number' placeholder='Telephone Number' maxLength='11' onChange={e => setTelephoneNumber(e.target.value)} />
+          <Form.Input width={4} fluid label='Telephone Number' placeholder='Telephone Number' maxLength='11' onChange={e => setTelephoneNumber(e.target.value)} />
         </Form.Group>
 
        <Form.Group>
@@ -212,7 +211,7 @@ function Create() {
         </Form.Group>
 
         <Form.Group>
-          <Form.Select width={6} fluid label='Select vehicle type' options={vehicleTypeOptions} placeholder='Vehicle Type' onChange={e => setvehicleType(e.target.textContent)} />
+          <Form.Select width={6} fluid label='Select vehicle type' options={vehicleTypeOptions} placeholder='Vehicle Type' onChange={e => setVehicleType(e.target.textContent)} />
           <Form.Select width={6} fluid label='Select engine size (CC)' options={engineSizeOptions} placeholder='Engine Size' onChange={e => setEngineSize(e.target.textContent)} />
           <Form.Select width={6} fluid label='Select the amount of additional drivers, maximum 4' options={additionalDriversOptions} placeholder='Additional Drivers'
             onChange={e => setAdditionalDrivers(e.target.textContent)} />
@@ -236,7 +235,7 @@ function Create() {
           />
 
            <label>
-            Will the vehicle be used outside for commericial purposes?
+            Will the vehicle be used outside for comericial purposes?
           </label>
           <Form.Radio width={2}
             fluid label="Yes"

@@ -103,7 +103,7 @@ function Delete() {
           >View all Records</Button>
         </Link>
         <Button color="red"
-          onClick={() => onDelete(data.id.Window.confirm("Are you sure you want to delete this id?"))}>Delete</Button>
+          onClick={() => onDelete(data.id)}>Delete</Button>
 
       </center>
     </div>
