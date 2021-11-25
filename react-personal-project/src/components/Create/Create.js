@@ -24,6 +24,8 @@ function Create() {
   const [currentValue, setCurrentValue] = useState('');
   const [vehicleRegistered, setVehicleRegistered] = useState(null);
 
+  let history = useHistory();
+
   function formValidation() {
     var validInput = true;
     var error = "";
@@ -120,7 +122,7 @@ function Create() {
 
   }
 
-  let history = useHistory();
+
   const callMockAPI = () => {
     console.log(prefix + " " + firstName + " " + lastName + " " + telephoneNumber + "\n" + addressLine1 + " " + addressLine2 + " " + city + " " + zipcode + "\n" +
       vehicleType + " " + engineSize + " " + additionalDrivers + " " + commercialPurposes + " " + registeredState + " " + currentValue + " " + vehicleRegistered);
