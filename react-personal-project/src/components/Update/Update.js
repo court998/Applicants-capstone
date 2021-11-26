@@ -54,7 +54,8 @@ function Update() {
     const formData = {
       telephoneNumber
     }
-    const endpointURL = `http://localhost:8080/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
+    // const endpointURL = `http://localhost:8080/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
+    const endpointURL = `${SERVER_URL}/applicants?id=${id}&phoneNumber=${telephoneNumber}`;
     axios.put(endpointURL, formData)
       .then(() => alert("Record Updated"))
         .catch((err) => {
