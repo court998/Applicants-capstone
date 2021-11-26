@@ -28,7 +28,7 @@ function Read() {
 
     <div>
       <center>
-      <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="250" width="600px" fluid />
+        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" alt="allstate-insurance" />
         <h1>All Records of Current Applications</h1>
         <br></br>
         <Statistic>
@@ -46,15 +46,15 @@ function Read() {
             <Table.HeaderCell textAlign={"center"}>Prefix</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>First Name</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Last Name</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>Phone Number</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Telephone Number</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Address</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Vehicle Type</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Engine Size (CC)</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Number of Additional Drivers</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Used Outside the Registered State?</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Used for Commercial Purposes?</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>When was the vehicle first registered?</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>Current Market Value?</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Date vehicle first registered</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Current Market Value</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Quote Amount</Table.HeaderCell>
           </Table.Row>
         </Table.Header>

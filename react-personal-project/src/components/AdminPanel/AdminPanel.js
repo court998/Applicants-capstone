@@ -39,7 +39,7 @@ function AdminPanel() {
   return (
     <div>
       <center>
-      <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="250" width="600px" fluid />
+        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" alt="allstate-insurance" />
         <h1>Administrator Panel</h1>
         <h3>Enter an applicant id below to access and modify</h3>
 

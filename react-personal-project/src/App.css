@@ -5,19 +5,12 @@
   justify-content: center;
   align-items: stretch;
   flex-direction: column;
-  
- }
-
- .ui.positive.button, .ui.positive.buttons .button {
-  background-color: #7fba21;
-  color: #fff;
-  text-shadow: none;
-  background-image: none;
 }
 
 
  .menu-item {
-  color:#FFF;
+  color:black;
+
   position: relative;
     vertical-align: middle;
     line-height: 1;
@@ -25,20 +18,18 @@
     padding-bottom: 1em;
     padding-left: 1em;
     padding-right: 2em;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 16px;
 }
 
 .ui.menu .item>img:not(.ui) {
-  width: 5em;
+  width: 10em;
 }
 
 .ui.menu {
   display: flex;
   margin: 1rem 0;
   background: #0033A0;
-  /*font-family: "SourceSansPro", Helvetica, Arial, sans-serif;*/
-  /*font-weight: 400;*/
   border: 1px solid rgb(247, 250, 246);
   box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
   border-radius: .28571429rem;
@@ -46,9 +37,3 @@
 }
 
 
-
-
-
-.errors{
-  color:red;
-}

@@ -50,8 +50,8 @@ function Get() {
             <Table.HeaderCell textAlign={"center"}>Vehicle Type</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Engine Size (CC)</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Number of Additional Drivers</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>Used Outside the Registered State?</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>Used for Commercial Purposes?</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Used Outside the Registered State</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Used for Commercial Purposes</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>When was the vehicle first registered?</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Current Market Value?</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Quote Amount</Table.HeaderCell>

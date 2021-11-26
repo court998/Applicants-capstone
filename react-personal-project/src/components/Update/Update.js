@@ -103,6 +103,16 @@ function Update() {
             value={data.lastName} //value absolute means can't be changed
           />
         </Form.Field>
+        <Form.Field>
+          <label>Quote Amount </label>
+          <input
+              readOnly={true}
+              type="text"
+              name="quoteAmount"
+              placeholder='Quote Amount'
+              value={data.quoteAmount} //value absolute means can't be changed
+          />
+        </Form.Field>
         <Header as="h1">For Administrator Use Only</Header>
         <Header as="h3">Please confirm you wish to update the Telephone Number for Driver {id}</Header>
         <Form.Field>
@@ -115,6 +125,7 @@ function Update() {
             defaultValue={data.telephoneNumber} //default means user can edit
           />
         </Form.Field>
+
       </Form>
       <center>
         <br></br>

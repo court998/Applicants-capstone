@@ -185,9 +185,9 @@ function Create() {
       <Form size={"medium"}>
 
       <center>
-      <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="200" width="400px" fluid />  <img src='https://media.istockphoto.com/vectors/protect-car-guard-shield-safety-badge-vehicle-icon-privacy-automobile-vector-id1069246432?k=20&m=1069246432&s=612x612&w=0&h=2mAylC6dMcZxm7OcbyOQqPlQ-xpyufuf5aioTPDQER4=' height="200" width="400px" fluid />
+        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" alt="allstate-insurance" />  <img src='https://media.istockphoto.com/vectors/protect-car-guard-shield-safety-badge-vehicle-icon-privacy-automobile-vector-id1069246432?k=20&m=1069246432&s=612x612&w=0&h=2mAylC6dMcZxm7OcbyOQqPlQ-xpyufuf5aioTPDQER4=' height="200" width="300px" fluid />
         <h1>Vehicle Insurance Application</h1>
-        <p>Note: Failure to disclose claims or false declarations will give Allstate certain legal rights, which may include the voiding of your insurance contract and/or refusal of a claim. You may also encounter difficulty in trying to purchase insurance elsewhere. Your quote is guaranteed for 5 days.</p>
+        <p><b>Note:</b> Failure to disclose claims or false declarations will give Allstate certain legal rights, which may include the voiding of your insurance contract and/or refusal of a claim. You may also encounter difficulty in trying to purchase insurance elsewhere. Your quote is guaranteed for 5 days.</p>
       </center><br></br>
       <br></br>
 
@@ -236,7 +236,7 @@ function Create() {
           />
 
            <label>
-            Will the vehicle be used outside for comericial purposes?
+            Will the vehicle be used outside for commericial purposes?
           </label>
           <Form.Radio width={2}
             fluid label="Yes"
@@ -266,7 +266,7 @@ function Create() {
 
 
           <Button primary
-            color='blue'
+            color='green'
             fluid size='large'
             onClick={formValidation}>Submit
 
