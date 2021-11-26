@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Form, Header } from 'semantic-ui-react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import SERVER_URL from "../../utils/constants";
+
 
 function Update() {
   const [data, setData] = useState([]);
   const [id, setId] = useState(null);
   const [telephoneNumber, setTelephoneNumber] = useState('');
+
+  let history = useHistory();
 
   useEffect(
     () => {
@@ -57,7 +60,8 @@ function Update() {
     // const endpointURL = `http://localhost:8080/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
     const endpointURL = `${SERVER_URL}/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
     axios.put(endpointURL, formData)
-      .then(() => alert("Record Updated"))
+      //.then(() => alert("Record Updated"))
+        .then(() => history.push("/admin"))
         .catch((err) => {
           alert("Driver ID does not exist")
           console.log(err);
