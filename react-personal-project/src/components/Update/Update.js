@@ -55,7 +55,7 @@ function Update() {
       telephoneNumber
     }
     // const endpointURL = `http://localhost:8080/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
-    const endpointURL = `${SERVER_URL}/applicants?id=${id}&phoneNumber=${telephoneNumber}`;
+    const endpointURL = `${SERVER_URL}/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
     axios.put(endpointURL, formData)
       .then(() => alert("Record Updated"))
         .catch((err) => {
@@ -109,7 +109,7 @@ function Update() {
           <label>Telephone Number</label>
           <input
             name="telephoneNumber"
-            placeholder='Phone Number'
+            placeholder='Telephone Number'
             maxLength='11'
             onChange={e => setTelephoneNumber(e.target.value)}
             defaultValue={data.telephoneNumber} //default means user can edit
