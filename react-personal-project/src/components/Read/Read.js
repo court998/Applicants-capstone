@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Read.css';
-import { Button, Table } from 'semantic-ui-react';
+import {Button, Table, Statistic, IconGroup, Icon} from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import SERVER_URL from '../../utils/constants';
+
 
 function Read() {
   const [tableData, setTableData] = useState([]);
@@ -19,12 +20,24 @@ function Read() {
     callMockApiWithAxiosGET();
   }, []);
 
+
+
+
+
   return (
+
     <div>
       <center>
       <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="250" width="600px" fluid />
         <h1>All Records of Current Applications</h1>
         <br></br>
+        <Statistic>
+          <Statistic.Value>
+            <Icon name='car' />{tableData.length}
+          </Statistic.Value>
+          <Statistic.Label>Total Applicants</Statistic.Label>
+
+        </Statistic>
       </center>
       <Table celled>
         <Table.Header>

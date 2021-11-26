@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { Form, Button, Radio } from 'semantic-ui-react';
+import {Form, Button, Flag, Image, Card} from 'semantic-ui-react';
 import axios from 'axios';
 import './Create.css';
-import { useHistory } from 'react-router';
+import { useHistory } from 'react-router-dom';
 import SERVER_URL from "../../utils/constants";
-
-
 
 function Create() {
   const [firstName, setFirstName] = useState('');
@@ -57,10 +55,6 @@ function Create() {
       error += "Address Line One required to proceed.\n";
     }
 
-    if (!addressLine2.trim()) {
-      validInput = false;
-      error += "Address Line required to proceed.\n";
-    }
 
     if (!city.trim()) {
       validInput = false;
@@ -185,37 +179,42 @@ function Create() {
   ]
 
   return (
-    
+
     <div>
+
       <Form size={"medium"}>
-     
 
-      <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="200" width="600px" fluid />
+      <center>
+      <img src={"https://amp.insurancejournal.com/app/uploads/2020/02/allstate-580x392.png"} height="200" width="400px" fluid />  <img src='https://media.istockphoto.com/vectors/protect-car-guard-shield-safety-badge-vehicle-icon-privacy-automobile-vector-id1069246432?k=20&m=1069246432&s=612x612&w=0&h=2mAylC6dMcZxm7OcbyOQqPlQ-xpyufuf5aioTPDQER4=' height="200" width="400px" fluid />
         <h1>Vehicle Insurance Application</h1>
-        <h3>Please fill out the information below accurately</h3>
-        <br></br>
+        <p>Note: Failure to disclose claims or false declarations will give Allstate certain legal rights, which may include the voiding of your insurance contract and/or refusal of a claim. You may also encounter difficulty in trying to purchase insurance elsewhere. Your quote is guaranteed for 5 days.</p>
+      </center><br></br>
+      <br></br>
 
+        <h3> Customer Details </h3>
         <Form.Group>
-          <Form.Select width={2} fluid label='Prefix' options={prefixOptions} placeholder='Prefix' onChange={e => setPrefix(e.target.textContent)} />
-          <Form.Input width={6} fluid label='First Name' placeholder='First Name' maxLength='20' onChange={e => setFirstName(e.target.value)} />
-          <Form.Input width={6} fluid label='Last Name' placeholder='Last Name' maxLength='20' onChange={e => setLastName(e.target.value)} />
-          <Form.Input width={4} fluid label='Telephone Number' placeholder='Telephone Number' maxLength='11' onChange={e => setTelephoneNumber(e.target.value)} />
+          <Form.Select width={2}  required fluid label='Prefix' options={prefixOptions} placeholder='Prefix' onChange={e => setPrefix(e.target.textContent)} />
+          <Form.Input width={6} required fluid label='First Name' placeholder='First Name' maxLength='20' onChange={e => setFirstName(e.target.value)} />
+          <Form.Input width={6} required fluid label='Last Name' placeholder='Last Name' maxLength='20' onChange={e => setLastName(e.target.value)} />
+          <Form.Input width={4} required fluid label='Telephone Number' placeholder='Telephone Number' maxLength='11' onChange={e => setTelephoneNumber(e.target.value)} />
         </Form.Group>
 
        <Form.Group>
-       <Form.Input width={8} fluid label='Address Line 1' placeholder='Address Line 1' maxLength='40' onChange={e => setAddressLine1(e.target.value)} />
+       <Form.Input width={8} required fluid label='Address Line 1' placeholder='Address Line 1' maxLength='40' onChange={e => setAddressLine1(e.target.value)} />
           <Form.Input width={8} fluid label='Address Line 2' placeholder='Address Line 2' maxLength='40' onChange={e => setAddressLine2(e.target.value)} />
-      </Form.Group>
+
+       </Form.Group>
 
         <Form.Group>
-          <Form.Field width={8}> <label>City</label> <input placeholder='City' onChange={e => setCity(e.target.value)} /> </Form.Field>
-          <Form.Field width={8}> <label>Zip Code</label> <input placeholder='Zip Code' onChange={e => setZipcode(e.target.value)} /> </Form.Field>
+          <Form.Field width={8} required><label>City</label> <input placeholder='City' onChange={e => setCity(e.target.value)} /> </Form.Field>
+          <Form.Field width={8} required> <label>Zip Code</label>   <input Flag name='us' placeholder='Zip Code' onChange={e => setZipcode(e.target.value)} /> </Form.Field>
         </Form.Group>
 
+        <h3> Vehicle Details </h3>
         <Form.Group>
-          <Form.Select width={6} fluid label='Select vehicle type' options={vehicleTypeOptions} placeholder='Vehicle Type' onChange={e => setVehicleType(e.target.textContent)} />
-          <Form.Select width={6} fluid label='Select engine size (CC)' options={engineSizeOptions} placeholder='Engine Size' onChange={e => setEngineSize(e.target.textContent)} />
-          <Form.Select width={6} fluid label='Select the amount of additional drivers, maximum 4' options={additionalDriversOptions} placeholder='Additional Drivers'
+          <Form.Select width={6} required fluid label='Select vehicle type' options={vehicleTypeOptions} placeholder='Vehicle Type' onChange={e => setVehicleType(e.target.textContent)} />
+          <Form.Select width={6} required fluid label='Select engine size (CC)' options={engineSizeOptions} placeholder='Engine Size' onChange={e => setEngineSize(e.target.textContent)} />
+          <Form.Select width={6} required fluid label='Select the amount of additional drivers, maximum 4' options={additionalDriversOptions} placeholder='Additional Drivers'
             onChange={e => setAdditionalDrivers(e.target.textContent)} />
         </Form.Group>
 
@@ -265,19 +264,19 @@ function Create() {
 
         <Form.Field> <label>Current Value of car in U.S Dollars</label> <input placeholder='Market Value' onChange={e => setCurrentValue(e.target.value)} /> </Form.Field>
 
-        <center>
+
           <Button primary
-            //type='submit'
             color='blue'
             fluid size='large'
-            onClick={formValidation}
-          >Submit</Button>
-        </center>
+            onClick={formValidation}>Submit
+
+          </Button>
+
+
      
       </Form>
     </div>
 
-    
   );
 }
 export default Create;

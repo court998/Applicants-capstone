@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Table } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import SERVER_URL from "../../utils/constants";
 
 function Get() {
   const [data, setData] = useState([]);
@@ -20,7 +21,8 @@ function Get() {
         return;
       }
       else{
-        const endpointURL = `http://localhost:8080/applicants/id?id=${id}`;
+        // const endpointURL = `http://localhost:8080/applicants/id?id=${id}`;
+        const endpointURL = `${SERVER_URL}/applicants/id?id=${id}`;
     axios.get(endpointURL)
     .then(response => setData(response.data));
     console.log("valid call");

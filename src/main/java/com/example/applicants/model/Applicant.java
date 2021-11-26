@@ -183,6 +183,7 @@ public class Applicant {
         this.quoteAmount = quoteAmount;
     }
 
+
     public void setCurrentValue(String currentValue) {
         this.currentValue = currentValue;
 

@@ -17,10 +17,12 @@ function App() {
         <a class="item" href='/'>
           
         </a>
-        <h1> Allstate Car Insurance Portal </h1> <h5>You're in good hands™</h5>
-        <a class="menu-item" href='/create'>CREATE RECORD</a>
+        <h1> Allstate Vehicle Insurance Application </h1>
+
+        <a class="menu-item" href='/create'>NEW CLAIM</a>
         <a class="menu-item" href='/admin'>ADMIN PANEL</a>
         <a class="menu-item" href='/read'>ALL RECORDS</a>
+
 
 
         </div>
