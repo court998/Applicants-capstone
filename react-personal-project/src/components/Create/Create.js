@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {Form, Button, Flag, Image, Card} from 'semantic-ui-react';
+import {Form, Button} from 'semantic-ui-react';
 import axios from 'axios';
 import './Create.css';
 import { useHistory } from 'react-router-dom';
@@ -207,7 +207,7 @@ function Create() {
 
         <Form.Group>
           <Form.Field width={8} required><label>City</label> <input placeholder='City' onChange={e => setCity(e.target.value)} /> </Form.Field>
-          <Form.Field width={8} required> <label>Zip Code</label>   <input Flag name='us' placeholder='Zip Code' onChange={e => setZipcode(e.target.value)} /> </Form.Field>
+          <Form.Field width={8} required> <label>Zip Code</label>   <input  placeholder='Zip Code' onChange={e => setZipcode(e.target.value)} /> </Form.Field>
         </Form.Group>
 
         <h3> Vehicle Details </h3>
@@ -218,11 +218,11 @@ function Create() {
             onChange={e => setAdditionalDrivers(e.target.textContent)} />
         </Form.Group>
 
-        <Form.Group inline>
+        <Form.Group inline >
           <label>
             Will the vehicle be used outside the registered state?
-          </label>
-          <Form.Radio width={2}
+          </ label>
+          < Form.Radio   width={2}
             fluid label="Yes"
             value="Yes"
             checked={registeredState === "Yes"}
@@ -235,8 +235,8 @@ function Create() {
             onChange={() => setRegisteredState("No")}
           />
 
-           <label>
-            Will the vehicle be used outside for commericial purposes?
+           <label required >
+            Will the vehicle be used outside for commercial purposes?
           </label>
           <Form.Radio width={2}
             fluid label="Yes"
@@ -263,20 +263,13 @@ function Create() {
         </Form.Field>
 
         <Form.Field> <label>Current Value of car in U.S Dollars</label> <input placeholder='Market Value' onChange={e => setCurrentValue(e.target.value)} /> </Form.Field>
-
-
-          <Button primary
-            color='green'
+        <Button primary
+            color='blue'
             fluid size='large'
             onClick={formValidation}>Submit
-
           </Button>
-
-
-     
       </Form>
     </div>
-
   );
 }
 export default Create;

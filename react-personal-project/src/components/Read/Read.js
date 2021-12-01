@@ -88,7 +88,7 @@ function Read() {
       <center>
         <Link to="/admin">
           <Button color="blue" padding="40px"
-          >Open Admin Panel</Button>
+          >Admin Panel</Button>
         </Link>
       </center>
     </div>

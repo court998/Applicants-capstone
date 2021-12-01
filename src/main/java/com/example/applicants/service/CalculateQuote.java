@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import java.text.DecimalFormat;
 
 @Service
-public class CalculateAQuote {
+public class CalculateQuote {
 
     public static double vehicleTypeFactor(String vehicleType) {
         switch (vehicleType) {

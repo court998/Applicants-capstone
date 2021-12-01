@@ -27,13 +27,13 @@ public class ApplicantService {
 
     public Applicant save(Applicant applicant) {
         //call to additional service class
-        double vehicleTypeFactorResult = CalculateAQuote.vehicleTypeFactor(applicant.getVehicleType());
-        double engineSizeFactorResult = CalculateAQuote.engineSizeFactor(applicant.getEngineSize());
-        double vehicleValueFactorResult = CalculateAQuote.vehicleValueFactor(applicant.getCurrentValue());
-        double addDriversFactorResult = CalculateAQuote.addDriversFactor(applicant.getAdditionalDrivers());
-        double commUseFactorResult = CalculateAQuote.commUseFactor(applicant.getCommercialPurposes());
-        double outsideStateFactorResult = CalculateAQuote.outsideStateFactor(applicant.getRegisteredState());
-        double finalQuoteAmount = CalculateAQuote.calculateFinalQuote(vehicleTypeFactorResult, engineSizeFactorResult, vehicleValueFactorResult,
+        double vehicleTypeFactorResult = CalculateQuote.vehicleTypeFactor(applicant.getVehicleType());
+        double engineSizeFactorResult = CalculateQuote.engineSizeFactor(applicant.getEngineSize());
+        double vehicleValueFactorResult = CalculateQuote.vehicleValueFactor(applicant.getCurrentValue());
+        double addDriversFactorResult = CalculateQuote.addDriversFactor(applicant.getAdditionalDrivers());
+        double commUseFactorResult = CalculateQuote.commUseFactor(applicant.getCommercialPurposes());
+        double outsideStateFactorResult = CalculateQuote.outsideStateFactor(applicant.getRegisteredState());
+        double finalQuoteAmount = CalculateQuote.calculateFinalQuote(vehicleTypeFactorResult, engineSizeFactorResult, vehicleValueFactorResult,
                 addDriversFactorResult, commUseFactorResult, outsideStateFactorResult);
         System.out.println(finalQuoteAmount);
         applicant.setQuoteAmount(finalQuoteAmount);

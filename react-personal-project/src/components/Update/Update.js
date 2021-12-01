@@ -19,14 +19,12 @@ function Update() {
   )
 
 
-  function validatePhoneNumber(eNumber) {
+  function validateNum(telNum) {
     var regexNum = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
-    if (eNumber.match(regexNum) && eNumber.length > 10) {
-      setTelephoneNumber(eNumber);
+    if (telNum.match(regexNum) && telNum.length > 10) {
+      setTelephoneNumber(telNum);
       callMockAPI();
-      window.location.href = "/admin";
       alert("Record  successfully updated");
-
       return true;
     }
     else {
@@ -46,7 +44,7 @@ function Update() {
         const endpointURL = `${SERVER_URL}/applicants/id?id=${id}`;
     axios.get(endpointURL)
     .then(response => setData(response.data));
-    console.log("valid call");
+    console.log("id retrieved");
       }
     
     }, [id],
@@ -60,8 +58,7 @@ function Update() {
     // const endpointURL = `http://localhost:8080/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
     const endpointURL = `${SERVER_URL}/applicants?id=${id}&telephoneNumber=${telephoneNumber}`;
     axios.put(endpointURL, formData)
-      //.then(() => alert("Record Updated"))
-        .then(() => history.push("/admin"))
+        .then(() => history.push("/read"))
         .catch((err) => {
           alert("Driver ID does not exist")
           console.log(err);
@@ -73,6 +70,7 @@ function Update() {
       <center>
         <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" alt="allstate-insurance" />
         <h1>Update a Record</h1>
+        <p><b>Note:</b> The values ID, First Name, Last Name and Quote Amount are fixed and cannot be changed. </p>
 
         <br></br>
       </center>
@@ -139,17 +137,18 @@ function Update() {
         </Link>
         <Button
           color="green"
-          onClick={e => validatePhoneNumber(telephoneNumber)}
+          onClick={e => validateNum(telephoneNumber)}
         >Update
         </Button>
-        <Link to="/read">
-          <Button color="yellow"
-          >View all Records</Button>
-        </Link>
         <Link to="/admin">
           <Button color="red"
           >Cancel</Button>
         </Link>
+        <Link to="/read">
+          <Button color="grey"
+          >View all Records</Button>
+        </Link>
+
       </center>
 
     </div>

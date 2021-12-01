@@ -17,7 +17,7 @@ function App() {
         <a class="item" href='/'>
           
         </a>
-        <h1> Allstate Vehicle Insurance Application </h1>
+        <h1> Vehicle Insurance Application </h1>
 
         <a class="menu-item" href='/create'>NEW CLAIM</a>
         <a class="menu-item" href='/admin'>ADMIN PANEL</a>

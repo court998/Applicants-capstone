@@ -119,7 +119,7 @@ public class Applicant {
         return zipcode;
     }
 
-    public void setZipCode(String zipCode) {
+    public void setZipcode(String zipcode) {
         this.zipcode = zipcode;
     }
 

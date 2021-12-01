@@ -45,7 +45,7 @@ function Delete() {
 
   function del() {
     alert("Record successfully deleted.");
-    window.location.href = "/admin";
+    window.location.href = "/read";
   }
 
   return (

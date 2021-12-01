@@ -4,10 +4,13 @@ import { Button, Form } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 import axios from 'axios';
 import SERVER_URL from "../../utils/constants";
+import {useHistory} from 'react-router-dom';
 
 function AdminPanel() {
   const [enteredId, setEnteredId] = useState('');
   const [tableData, setTableData] = useState([]);
+
+  let history = useHistory();
 
   useEffect(() => {
     // const endpointURL = "http://localhost:8080/applicants";
@@ -16,20 +19,20 @@ function AdminPanel() {
       .then(response => setTableData(response.data));
   }, []);
 
-  function setIdInLocalStorage(id) {
+  function setId(id) { //to set in local storage
     console.log(id);
     localStorage.setItem("id", id);
   }
 
-  function checkIfIdIsValid(component) {
+  function validateID(component) {
     for (var i = 0; i < tableData.length; i++) {
       if (parseInt(enteredId) === parseInt(tableData[i].id)) {
-        var equals = true;
+        var match = true;
       }
     }
-    if (equals) {
-      setIdInLocalStorage(enteredId);
-      window.location.href = component;
+    if (match) {
+      setId(enteredId);
+      history.push(component)
     } 
     else {
       alert("The ID entered does not exist. Please enter another.");
@@ -53,19 +56,19 @@ function AdminPanel() {
           <Button
               color="blue"
               padding="40px"
-              onClick={() => checkIfIdIsValid("/get")}
+              onClick={() => validateID("/get")}
           >View Record</Button>
 
           <Button
-              color="green"
+              color="grey"
               padding="40px"
-              onClick={() => checkIfIdIsValid("/update")}
+              onClick={() => validateID("/update")}
           >Update Record</Button>
 
           <Button
               color="red"
               padding="40px"
-              onClick={() => checkIfIdIsValid("/delete")}
+              onClick={() => validateID("/delete")}
           >Delete Record</Button>
 
 

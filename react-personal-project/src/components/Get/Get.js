@@ -18,16 +18,16 @@ function Get() {
     () => {
       if(id === null)
       {
-        return;
+
       }
       else{
         // const endpointURL = `http://localhost:8080/applicants/id?id=${id}`;
         const endpointURL = `${SERVER_URL}/applicants/id?id=${id}`;
     axios.get(endpointURL)
     .then(response => setData(response.data));
-    console.log("valid call");
+    console.log("Success");
       }
-    
+
     }, [id],
   )
 
@@ -85,7 +85,7 @@ function Get() {
         </Link>
 
         <Link to="/read">
-          <Button color="yellow" padding="40px"
+          <Button color="grey" padding="40px"
           >View all Records</Button>
         </Link>
 
