@@ -68,7 +68,7 @@ function Update() {
   return (
     <div>
       <center>
-        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" alt="allstate-insurance" />
+        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" />
         <h1>Update a Record</h1>
         <p><b>Note:</b> The values ID, First Name, Last Name and Quote Amount are fixed and cannot be changed. </p>
 
