@@ -25,10 +25,10 @@ function Create() {
   let history = useHistory();
 
   function formValidation() {
-    var validInput = true;
-    var error = "";
-    var regexNum = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
-    var zipcodeRegex = /^[0-9]{5}(?:-[0-9]{4})?$/; //REGEX num that will only accept 5 digits seperated by hyphen accepting a following 4
+    let validInput = true;
+    let error = "";
+    let regexNum = /^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s./0-9]*$/;
+    let zipcodeRegex = /^[0-9]{5}(?:-[0-9]{4})?$/; //REGEX num that will only accept 5 digits seperated by hyphen accepting a following 4
 
     if (!prefix.trim()) {
       validInput= false;
