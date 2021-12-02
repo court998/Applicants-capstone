@@ -28,7 +28,7 @@ function Read() {
 
     <div>
       <center>
-        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" a />
+        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" />  <img src='https://media.istockphoto.com/vectors/protect-car-guard-shield-safety-badge-vehicle-icon-privacy-automobile-vector-id1069246432?k=20&m=1069246432&s=612x612&w=0&h=2mAylC6dMcZxm7OcbyOQqPlQ-xpyufuf5aioTPDQER4=' height="200" width="300px" fluid />
         <h1>All Records of Current Applications</h1>
         <br></br>
         <Statistic>
@@ -51,8 +51,8 @@ function Read() {
             <Table.HeaderCell textAlign={"center"}>Vehicle Type</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Engine Size (CC)</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Number of Additional Drivers</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>Used Outside the Registered State?</Table.HeaderCell>
-            <Table.HeaderCell textAlign={"center"}>Used for Commercial Purposes?</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Used Outside the Registered State</Table.HeaderCell>
+            <Table.HeaderCell textAlign={"center"}>Used for Commercial Purposes</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Date vehicle first registered</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Current Market Value</Table.HeaderCell>
             <Table.HeaderCell textAlign={"center"}>Quote Amount</Table.HeaderCell>

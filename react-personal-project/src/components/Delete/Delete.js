@@ -85,7 +85,7 @@ function Delete() {
         </Link>
 
         <Link to="/read">
-          <Button color="yellow"
+          <Button color="grey"
           >View all Records</Button>
         </Link>
         <Button color="red"

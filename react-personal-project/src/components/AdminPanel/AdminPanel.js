@@ -42,15 +42,15 @@ function AdminPanel() {
   return (
     <div>
       <center>
-        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450"  />
+        <img src={"https://www.investopedia.com/thmb/O7KjF5XGDvCIF8zWGwLlg3ISh8s=/1910x636/filters:no_upscale()/allstate-insurance-94dd46df295f41e58c22526f98fc5fca.png"} height="150" width="450" />  <img src='https://media.istockphoto.com/vectors/protect-car-guard-shield-safety-badge-vehicle-icon-privacy-automobile-vector-id1069246432?k=20&m=1069246432&s=612x612&w=0&h=2mAylC6dMcZxm7OcbyOQqPlQ-xpyufuf5aioTPDQER4=' height="200" width="300px" fluid />
         <h1>Administrator Panel</h1>
-        <h3>Enter an applicant id below to access and modify</h3>
+        <h3>Enter an applicant ID below to access and modify</h3>
 
         <br></br>
       </center>
       <Form size={"large"}>
         <Form.Group>
-          <Form.Input maxLength='3' width={16} fluid label='Enter ID' placeholder='Enter ID' onChange={e => setEnteredId(e.target.value)} />
+          <Form.Input maxLength='5' width={16} fluid label='Enter ID' placeholder='Applicant ID' onChange={e => setEnteredId(e.target.value)} />
         </Form.Group>
         <center>
           <Button

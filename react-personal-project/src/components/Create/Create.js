@@ -63,7 +63,7 @@ function Create() {
 
     if(!zipcode.match(zipcodeRegex)){
       validInput = false;
-      error += "Zip Code required to proceed and must be presented in the format: 12345-6789\n";
+      error += "Zip Code required to proceed and must be presented in the correct US format.\n";
     }
 
     if (!vehicleType.trim()) {
@@ -109,7 +109,7 @@ function Create() {
       window.location.href = "/read";
       alert("Form submission successful");
     } else {
-      alert("The following records have not been added:\n\n" + error);
+      alert("Please check the following errors:\n\n" + error);
       console.log(error);
       return false;
     }
@@ -193,28 +193,28 @@ function Create() {
 
         <h3> Customer Details </h3>
         <Form.Group>
-          <Form.Select width={2}  required fluid label='Prefix' options={prefixOptions} placeholder='Prefix' onChange={e => setPrefix(e.target.textContent)} />
-          <Form.Input width={6} required fluid label='First Name' placeholder='First Name' maxLength='20' onChange={e => setFirstName(e.target.value)} />
-          <Form.Input width={6} required fluid label='Last Name' placeholder='Last Name' maxLength='20' onChange={e => setLastName(e.target.value)} />
-          <Form.Input width={4} required fluid label='Telephone Number' placeholder='Telephone Number' maxLength='11' onChange={e => setTelephoneNumber(e.target.value)} />
+          <Form.Select width={2}   fluid label='Prefix' options={prefixOptions} placeholder='Prefix' onChange={e => setPrefix(e.target.textContent)} />
+          <Form.Input width={6} fluid label='First Name' placeholder='First Name' maxLength='20' onChange={e => setFirstName(e.target.value)} />
+          <Form.Input width={6}  fluid label='Last Name' placeholder='Last Name' maxLength='20' onChange={e => setLastName(e.target.value)} />
+          <Form.Input width={4}  fluid label='Telephone Number' placeholder='Telephone Number' maxLength='11' onChange={e => setTelephoneNumber(e.target.value)} />
         </Form.Group>
 
        <Form.Group>
-       <Form.Input width={8} required fluid label='Address Line 1' placeholder='Address Line 1' maxLength='40' onChange={e => setAddressLine1(e.target.value)} />
+       <Form.Input width={8}  fluid label='Address Line 1' placeholder='Address Line 1' maxLength='40' onChange={e => setAddressLine1(e.target.value)} />
           <Form.Input width={8} fluid label='Address Line 2' placeholder='Address Line 2' maxLength='40' onChange={e => setAddressLine2(e.target.value)} />
 
        </Form.Group>
 
         <Form.Group>
-          <Form.Field width={8} required><label>City</label> <input placeholder='City' onChange={e => setCity(e.target.value)} /> </Form.Field>
-          <Form.Field width={8} required> <label>Zip Code</label>   <input  placeholder='Zip Code' onChange={e => setZipcode(e.target.value)} /> </Form.Field>
+          <Form.Field width={8} ><label>City</label> <input placeholder='City' onChange={e => setCity(e.target.value)} /> </Form.Field>
+          <Form.Field width={8} > <label>Zip Code</label>   <input  placeholder='Zip Code' onChange={e => setZipcode(e.target.value)} /> </Form.Field>
         </Form.Group>
 
         <h3> Vehicle Details </h3>
         <Form.Group>
-          <Form.Select width={6} required fluid label='Select vehicle type' options={vehicleTypeOptions} placeholder='Vehicle Type' onChange={e => setVehicleType(e.target.textContent)} />
-          <Form.Select width={6} required fluid label='Select engine size (CC)' options={engineSizeOptions} placeholder='Engine Size' onChange={e => setEngineSize(e.target.textContent)} />
-          <Form.Select width={6} required fluid label='Select the amount of additional drivers, maximum 4' options={additionalDriversOptions} placeholder='Additional Drivers'
+          <Form.Select width={6}  fluid label='Select vehicle type' options={vehicleTypeOptions} placeholder='Vehicle Type' onChange={e => setVehicleType(e.target.textContent)} />
+          <Form.Select width={6}  fluid label='Select engine size (CC)' options={engineSizeOptions} placeholder='Engine Size' onChange={e => setEngineSize(e.target.textContent)} />
+          <Form.Select width={6}  fluid label='Select the amount of additional drivers, maximum 4' options={additionalDriversOptions} placeholder='Additional Drivers'
             onChange={e => setAdditionalDrivers(e.target.textContent)} />
         </Form.Group>
 
